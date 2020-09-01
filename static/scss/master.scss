@@ -1,0 +1,28 @@
+@import "animations";
+@import "utilities";
+@import "variables";
+
+@import "./pages/index";
+
+html {
+	font-size: 10px;
+	margin: 0;
+	font-family: "Comfortaa", cursive;
+	box-sizing: border-box;
+}
+* {
+	font-size: inherit;
+	box-sizing: inherit;
+}
+
+::selection {
+	background-color: #e57673;
+	color: white;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	min-height: 100vh;
+	position: relative;
+}
