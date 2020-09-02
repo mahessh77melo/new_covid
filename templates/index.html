@@ -6,6 +6,9 @@
 		</div>
 		<span class="content__form--wrap"
 			><div class="content__form">
+				<div class="content__form--header">
+					<h3>Stay Safe :)</h3>
+				</div>
 				<form class="form__covid" method="POST">
 					<select
 						class="form__covid--select"
@@ -18,18 +21,23 @@
 							disabled
 							selected
 						>
-							Select the country
+							Select the country &nbsp; &nbsp;
+							<span class="down-arrow">&darr;</span>
 						</option>
 						{% for i in clist %}
-						<option class="form__covid--option" value="{{i['id']}}">
-							{{i['name']}}
+						<option
+							class="form__covid--option"
+							value="{{ i['id'] }}"
+						>
+							{{ i['name'] }}
 						</option>
 						{% endfor %}
 					</select>
-					<button type="submit">Submit</button>
-				</form>
-			</div></span
-		>
+					<button type="submit" class="form__covid--sub-btn">
+						<img src="../static/img/submit.png" alt="submit" />
+					</button>
+				</form></div
+		></span>
 	</div>
 </div>
 {% endblock %}
