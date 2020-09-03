@@ -1,3 +1,10 @@
 {% extends "base.html" %} {% block main %}
-<h1 class="summa">You selected {{ ctry }}</h1>
+<div class="detail__container">
+	<div class="detail__container--chart">
+		<canvas> </canvas>
+	</div>
+	<div class="detail__container--stats">
+		<h1 class="summa">You selected {{ ctry }}</h1>
+	</div>
+</div>
 {% endblock %}

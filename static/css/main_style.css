@@ -1,3 +1,38 @@
+@keyframes splitout {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-25rem);
+    opacity: 0.9; }
+  30% {
+    transform: translateY(-5rem);
+    opacity: 1;
+    rotate: 7deg; }
+  50% {
+    transform: translateY(-1rem);
+    opacity: 1;
+    rotate: 20deg; }
+  72% {
+    transform: translateY(-3.5rem);
+    opacity: 1;
+    rotate: -20deg; }
+  93% {
+    transform: translateY(-2rem);
+    opacity: 1;
+    rotate: -10deg; }
+  97% {
+    transform: translateY(0);
+    opacity: 1;
+    rotate: -7deg; }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    rotate: 0; } }
+
 .container__index {
   background-image: linear-gradient(to right bottom, rgba(0, 20, 39, 0.7), rgba(191, 6, 3, 0.7), rgba(141, 8, 1, 0.5)), url("../img/new_covid-0.jpg");
   background-size: cover;
@@ -46,12 +81,15 @@
       font-weight: 700;
       text-transform: uppercase;
       text-align: center;
-      font-family: inherit;
       text-shadow: 0 0.3rem 0.65rem rgba(0, 20, 39, 0.88), 0 -0.3rem 0.65rem rgba(0, 20, 39, 0.88);
       color: white;
       letter-spacing: 2px;
       font-family: "Raleway", sans-serif;
-      margin-bottom: 4rem; }
+      margin-bottom: 4rem;
+      animation: fallDown;
+      animation-fill-mode: backwards;
+      animation-delay: 1s;
+      animation-duration: 0.4s; }
   .content__heading {
     text-transform: uppercase;
     grid-column: 0/1;
@@ -62,6 +100,12 @@
       font-size: 7rem;
       font-weight: 700;
       letter-spacing: 2px; }
+      .content__heading--main .word-1 {
+        animation: splitout 0.7s ease-in 0.4s;
+        animation-fill-mode: forwards; }
+      .content__heading--main .word-2 {
+        animation-fill-mode: forwards;
+        animation: splitout 0.7s ease-in-out 0.4s; }
 
 .form__covid {
   display: grid;
@@ -81,6 +125,8 @@
     box-shadow: 0 0.6rem 1rem rgba(0, 20, 39, 0.8);
     -webkit-appearance: none;
     appearance: none;
+    cursor: pointer;
+    background-image: linear-gradient(135deg, rgba(68, 68, 68, 0.4), rgba(68, 68, 68, 0.8), rgba(68, 68, 68, 0.4));
     max-width: 23rem; }
     .form__covid--select img {
       margin-left: 1.5rem;
@@ -96,9 +142,9 @@
     .form__covid--select::-ms-expand {
       display: none; }
   .form__covid--option {
-    font-weight: 400;
+    font-weight: 300;
     font-family: inherit;
-    font-size: 1.4rem; }
+    font-size: 1.8rem; }
   .form__covid--sub-btn {
     cursor: pointer;
     grid-area: 2/2/-1/-1;
@@ -136,7 +182,18 @@
   font-size: 3rem;
   text-align: center;
   text-transform: uppercase;
-  color: #001427; }
+  color: #f4d58d; }
+
+.detail__container {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 1fr;
+  background-image: linear-gradient(105deg, #001427 0%, #001427 50%, rgba(0, 20, 39, 0.975) 50%);
+  grid-column-gap: 2rem; }
+  .detail__container--chart {
+    grid-column: 0/1; }
+  .detail__container--stats {
+    grid-column: 1/2; }
 
 html {
   font-size: 10px;

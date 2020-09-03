@@ -1,0 +1,44 @@
+@keyframes splitout {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fallDown {
+	0% {
+		transform: translateY(-25rem);
+		opacity: 0.9;
+	}
+	30% {
+		transform: translateY(-5rem);
+		opacity: 1;
+		rotate: 7deg;
+	}
+	50% {
+		transform: translateY(-1rem);
+		opacity: 1;
+		rotate: 20deg;
+	}
+	72% {
+		transform: translateY(-3.5rem);
+		opacity: 1;
+		rotate: -20deg;
+	}
+	93% {
+		transform: translateY(-2rem);
+		opacity: 1;
+		rotate: -10deg;
+	}
+	97% {
+		transform: translateY(0);
+		opacity: 1;
+		rotate: -7deg;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		rotate: 0;
+	}
+}
