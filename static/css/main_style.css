@@ -6,14 +6,14 @@
 
 @keyframes fallDown {
   0% {
-    transform: translateY(-25rem);
+    transform: translateY(-30rem);
     opacity: 0.9; }
   30% {
-    transform: translateY(-5rem);
+    transform: translateY(-7rem);
     opacity: 1;
     rotate: 7deg; }
   50% {
-    transform: translateY(-1rem);
+    transform: translateY(-1.8rem);
     opacity: 1;
     rotate: 20deg; }
   72% {
@@ -36,7 +36,7 @@
 .container__index {
   background-image: linear-gradient(to right bottom, rgba(0, 20, 39, 0.7), rgba(191, 6, 3, 0.7), rgba(141, 8, 1, 0.5)), url("../img/new_covid-0.jpg");
   background-size: cover;
-  background-blend-mode: color-dodge;
+  background-blend-mode: hard-light;
   height: 100vh;
   width: 100vw;
   overflow: hidden; }
@@ -55,15 +55,15 @@
     justify-self: center;
     filter: drop-shadow(0 1.5rem 3rem rgba(0, 0, 0, 0.9));
     padding: 1rem;
-    background-color: #444;
-    border-radius: 25px;
+    background-color: #000f1d;
+    border-radius: 30px;
     transition: all 0.3s; }
     .content__form--wrap:focus {
       transform: scale(1.05); }
   .content__form {
     z-index: 2;
-    padding: 3rem;
-    height: 60rem;
+    padding: 3.5rem;
+    height: 70rem;
     width: 33rem;
     background-image: url("../img/new_covid-2.jpg");
     background-position: center;
@@ -74,7 +74,7 @@
     flex-direction: column;
     justify-content: center;
     background-color: white;
-    clip-path: polygon(0 0, 25% 0, 26% 4%, 75% 4%, 76% 0, 100% 0, 100% 100%, 0% 100%, 0 0);
+    clip-path: polygon(0 0, 25% 0, 25.5% 3%, 75% 3%, 75.5% 0, 100% 0, 100% 100%, 0% 100%, 0 0);
     border-radius: 22px; }
     .content__form--header {
       font-size: 3.5rem;
@@ -109,9 +109,9 @@
 
 .form__covid {
   display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: max-content min-content;
-  justify-content: space-around; }
+  grid-template-rows: 1fr min-max(min-content, 60px);
+  grid-template-columns: min-content min-content min-content;
+  justify-content: center; }
   .form__covid--select {
     padding: 2rem 1rem;
     grid-area: 1/1/1/2;
@@ -126,7 +126,7 @@
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
-    background-image: linear-gradient(135deg, rgba(68, 68, 68, 0.4), rgba(68, 68, 68, 0.8), rgba(68, 68, 68, 0.4));
+    background-image: linear-gradient(135deg, rgba(68, 68, 68, 0.2), rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.3));
     max-width: 23rem; }
     .form__covid--select img {
       margin-left: 1.5rem;
@@ -178,6 +178,122 @@
       max-width: 2.8rem;
       transition: all 0.15s; }
 
+.custom__select {
+  display: grid;
+  grid-template-rows: 1fr 25rem;
+  grid-template-columns: min-content min-content min-content;
+  justify-content: center; }
+  .custom__select .select__input {
+    display: inline-block;
+    grid-row: 1/1;
+    padding: 1.5rem 1rem;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #001427;
+    font-family: inherit;
+    max-width: 19rem;
+    background-color: #eee;
+    border-left: 5px solid #eee;
+    /* box-shadow: 0 -0.5rem 0.4rem rgba($color-5, 0.25) inset,
+			0.5rem 0 0.4rem rgba($color-5, 0.25) inset,
+			0 0.5rem 0.4rem rgba($color-5, 0.25) inset; */
+    border: none; }
+    .custom__select .select__input:focus {
+      outline: none;
+      border-left: 5px solid #001427;
+      /* box-shadow: 0 -0.45rem 0.5rem rgba($color-5, 0.3) inset,
+				0 0.45rem 0.5rem rgba($color-5, 0.3) inset; */ }
+  .custom__select ::-webkit-input-placeholder {
+    color: #444; }
+  .custom__select--sub-btn {
+    cursor: pointer;
+    grid-area: 1/3/2/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 6rem;
+    margin-left: 1rem;
+    backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    width: 6rem;
+    outline: none;
+    background-image: radial-gradient(rgba(0, 20, 39, 0.65), rgba(0, 0, 0, 0.85), rgba(0, 20, 39, 0.95));
+    border: none;
+    transition: all 0.2s;
+    box-shadow: 0 1.3rem 1.3rem rgba(0, 0, 0, 0.9); }
+    .custom__select--sub-btn:hover img {
+      transform: scale(1.1); }
+    .custom__select--sub-btn:focus {
+      outline: none; }
+    .custom__select--sub-btn:active {
+      transform: translateY(0.3rem);
+      box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.9); }
+    .custom__select--sub-btn img {
+      height: 3.5rem;
+      backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      min-width: 2.8rem;
+      max-width: 2.8rem;
+      transition: all 0.15s; }
+  .custom__select .option {
+    font-size: 1.7rem;
+    padding: 1.5rem 0;
+    border-radius: 2px;
+    border-bottom: 1px solid rgba(68, 68, 68, 0.3333);
+    transition: all 0.2s ease-in;
+    cursor: pointer; }
+    .custom__select .option:hover {
+      background-color: rgba(0, 20, 39, 0.85);
+      color: #f4d58d; }
+  .custom__select .option__wrapper {
+    border-radius: 0.4rem;
+    border: none;
+    opacity: 0.9;
+    box-shadow: 0 -0.4rem 0.6rem rgba(141, 8, 1, 0.5) inset, 0 0.4rem 0.6rem rgba(141, 8, 1, 0.5) inset;
+    display: inline-block;
+    text-align: center;
+    display: none;
+    max-height: 45rem;
+    overflow-y: scroll;
+    transition: all 0.3s;
+    scrollbar-width: none;
+    grid-area: 2/1/3/3;
+    background-color: #eee; }
+  .custom__select ::-webkit-scrollbar {
+    display: none; }
+  .custom__select .dropdown {
+    grid-row: 1/1;
+    background-color: #eee;
+    /* box-shadow: 0 -0.5rem 0.4rem rgba($color-5, 0.25) inset,
+			-0.5rem 0 0.4rem rgba($color-5, 0.25) inset,
+			0 0.5rem 0.4rem rgba($color-5, 0.25) inset; */
+    border: none;
+    cursor: pointer;
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+    transition: all 0.2s ease-out;
+    border-left: none; }
+    .custom__select .dropdown img {
+      height: 2rem;
+      transition: all 0.2s ease-out;
+      width: 2rem;
+      opacity: 0.5; }
+      .custom__select .dropdown img:hover {
+        transform: scale(1.1) translateY(-4px);
+        opacity: 0.75; }
+      .custom__select .dropdown img:active {
+        transform: scale(1.03) translateY(-1px);
+        opacity: 0.75; }
+      .custom__select .dropdown img:focus {
+        outline: none; }
+    .custom__select .dropdown:focus .select__input {
+      border-left: 5px solid #001427; }
+
 .summa {
   font-size: 3rem;
   text-align: center;
@@ -199,7 +315,8 @@ html {
   font-size: 10px;
   margin: 0;
   font-family: "Comfortaa", cursive;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  scroll-behavior: smooth; }
 
 * {
   font-size: inherit;

@@ -13,10 +13,10 @@ id_list = [i['id']
 def index():
     if request.method == "POST":
         name = request.form['ctry_name']
-        if name in id_list:
+        if name in name_list:
             return redirect(url_for("chartPage", ctry=name))
     else:
-        return render_template('index.html', clist=ctry_list)
+        return render_template('index_new.html', clist=ctry_list)
 
 
 @app.route('/<ctry>')

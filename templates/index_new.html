@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block main %}
+<div class="container__index">
+	<div class="content">
+		<div class="content__heading">
+			<h1 class="content__heading--main">
+				<span class="word-1">Covid</span>
+				<span class="word-2">Tracker</span>
+			</h1>
+		</div>
+		<span class="content__form--wrap"
+			><div class="content__form">
+				<div class="content__form--header">
+					<h3>Stay Safe :)</h3>
+				</div>
+				<form class="custom__select" method="POST">
+					<input
+						type="text"
+						class="select__input"
+						placeholder="Select the Country"
+						name="ctry_name"
+						value=""
+					/>
+					<button class="dropdown" type="button">
+						<img
+							src="../static/img/drop-down-arrow.png"
+							alt="&darr;"
+						/>
+					</button>
+					<button type="submit" class="custom__select--sub-btn">
+						<img src="../static/img/submit.png" alt="submit" />
+					</button>
+					<div class="option__wrapper">
+						{% for i in clist %}
+						<div class="option" value="{{ i['name'] }}">
+							{{ i['name'] }}
+						</div>
+						{% endfor %}
+					</div>
+				</form>
+			</div></span
+		>
+	</div>
+</div>
+{% endblock %}

@@ -7,7 +7,7 @@
 		),
 		url("../img/new_covid-0.jpg");
 	background-size: cover;
-	background-blend-mode: color-dodge;
+	background-blend-mode: hard-light;
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden;
@@ -27,8 +27,8 @@
 		justify-self: center;
 		filter: drop-shadow(0 1.5rem 3rem rgba($black-col, 0.9));
 		padding: 1rem;
-		background-color: $grey-col;
-		border-radius: 25px;
+		background-color: darken($color-1, 2%);
+		border-radius: 30px;
 		transition: all 0.3s;
 		&:focus {
 			transform: scale(1.05);
@@ -36,8 +36,8 @@
 	}
 	&__form {
 		z-index: 2;
-		padding: 3rem;
-		height: 60rem;
+		padding: 3.5rem;
+		height: 70rem;
 		width: 33rem;
 		background-image: url("../img/new_covid-2.jpg");
 		background-position: center;
@@ -51,9 +51,9 @@
 		clip-path: polygon(
 			0 0,
 			25% 0,
-			26% 4%,
-			75% 4%,
-			76% 0,
+			25.5% 3%,
+			75% 3%,
+			75.5% 0,
 			100% 0,
 			100% 100%,
 			0% 100%,
@@ -103,9 +103,9 @@
 }
 .form__covid {
 	display: grid;
-	grid-template-rows: 1fr 1fr;
-	grid-template-columns: max-content min-content;
-	justify-content: space-around;
+	grid-template-rows: 1fr min-max(min-content, 60px);
+	grid-template-columns: min-content min-content min-content;
+	justify-content: center;
 	&--select {
 		padding: 2rem 1rem;
 		grid-area: 1/1/1/2;
@@ -192,6 +192,149 @@
 			min-width: 2.8rem;
 			max-width: 2.8rem;
 			transition: all 0.15s;
+		}
+	}
+}
+.custom__select {
+	display: grid;
+	grid-template-rows: 1fr 25rem;
+	grid-template-columns: min-content min-content min-content;
+	justify-content: center;
+
+	.select__input {
+		display: inline-block;
+		grid-row: 1/1;
+		padding: 1.5rem 1rem;
+		border-top-left-radius: 0.4rem;
+		border-bottom-left-radius: 0.4rem;
+		font-size: 1.7rem;
+		font-weight: 500;
+		color: $color-1;
+		font-family: inherit;
+		max-width: 19rem;
+		background-color: $subtle-grey;
+		border-left: 5px solid $subtle-grey;
+		/* box-shadow: 0 -0.5rem 0.4rem rgba($color-5, 0.25) inset,
+			0.5rem 0 0.4rem rgba($color-5, 0.25) inset,
+			0 0.5rem 0.4rem rgba($color-5, 0.25) inset; */
+		border: none;
+		&:focus {
+			outline: none;
+			border-left: 5px solid $color-1;
+			/* box-shadow: 0 -0.45rem 0.5rem rgba($color-5, 0.3) inset,
+				0 0.45rem 0.5rem rgba($color-5, 0.3) inset; */
+		}
+	}
+	::-webkit-input-placeholder {
+		color: $grey-col;
+	}
+
+	&--sub-btn {
+		cursor: pointer;
+		grid-area: 1/3/2/4;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		height: 6rem;
+		margin-left: 1rem;
+		backface-visibility: hidden;
+		-moz-backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		width: 6rem;
+		outline: none;
+
+		background-image: radial-gradient(
+			rgba($color-1, 0.65),
+			rgba($black-col, 0.85),
+			rgba($color-1, 0.95)
+		);
+		border: none;
+		transition: all 0.2s;
+		box-shadow: 0 1.3rem 1.3rem rgba($black-col, 0.9);
+		&:hover img {
+			transform: scale(1.1);
+		}
+
+		&:focus {
+			outline: none;
+		}
+		&:active {
+			transform: translateY(0.3rem);
+			box-shadow: 0 0.6rem 0.6rem rgba($black-col, 0.9);
+		}
+		img {
+			height: 3.5rem;
+			backface-visibility: hidden;
+			-moz-backface-visibility: hidden;
+			-webkit-backface-visibility: hidden;
+			min-width: 2.8rem;
+			max-width: 2.8rem;
+			transition: all 0.15s;
+		}
+	}
+	.option {
+		font-size: 1.7rem;
+		padding: 1.5rem 0;
+		border-radius: 2px;
+		border-bottom: 1px solid rgba($grey-col, 0.3333);
+		transition: all 0.2s ease-in;
+		cursor: pointer;
+		&:hover {
+			background-color: rgba($color-1, 0.85);
+			color: $color-3;
+		}
+	}
+	.option__wrapper {
+		border-radius: 0.4rem;
+		border: none;
+		opacity: 0.9;
+		box-shadow: 0 -0.4rem 0.6rem rgba($color-5, 0.5) inset,
+			0 0.4rem 0.6rem rgba($color-5, 0.5) inset;
+		display: inline-block;
+		text-align: center;
+		display: none;
+		max-height: 45rem;
+		overflow-y: scroll;
+		transition: all 0.3s;
+		scrollbar-width: none;
+		grid-area: 2/1/3/3;
+		background-color: $subtle-grey;
+	}
+	::-webkit-scrollbar {
+		display: none;
+	}
+	.dropdown {
+		grid-row: 1/1;
+		background-color: $subtle-grey;
+		/* box-shadow: 0 -0.5rem 0.4rem rgba($color-5, 0.25) inset,
+			-0.5rem 0 0.4rem rgba($color-5, 0.25) inset,
+			0 0.5rem 0.4rem rgba($color-5, 0.25) inset; */
+		border: none;
+		cursor: pointer;
+		border-top-right-radius: 0.4rem;
+		border-bottom-right-radius: 0.4rem;
+		transition: all 0.2s ease-out;
+		border-left: none;
+		img {
+			height: 2rem;
+			transition: all 0.2s ease-out;
+			width: 2rem;
+			opacity: 0.5;
+			&:hover {
+				transform: scale(1.1) translateY(-4px);
+				opacity: 0.75;
+			}
+			&:active {
+				transform: scale(1.03) translateY(-1px);
+				opacity: 0.75;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		&:focus .select__input {
+			border-left: 5px solid $color-1;
 		}
 	}
 }
