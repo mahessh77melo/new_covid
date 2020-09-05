@@ -21,19 +21,14 @@
 						value=""
 					/>
 					<button class="dropdown" type="button">
-						<img
-							src="../static/img/drop-down-arrow.png"
-							alt="&darr;"
-						/>
+						<img src="../static/img/drop-down-arrow.png" alt="&darr;" />
 					</button>
 					<button type="submit" class="custom__select--sub-btn">
 						<img src="../static/img/submit.png" alt="submit" />
 					</button>
 					<div class="option__wrapper">
 						{% for i in clist %}
-						<div class="option" value="{{ i['name'] }}">
-							{{ i['name'] }}
-						</div>
+						<div class="option" value="{{ i['name'] }}">{{ i['name'] }}</div>
 						{% endfor %}
 					</div>
 				</form>

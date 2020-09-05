@@ -2,13 +2,11 @@ const drop = document.querySelector(".dropdown");
 
 drop.addEventListener("click", () => {
 	if (document.querySelector(".option__wrapper").style.display == "none") {
-		document.querySelector(".option__wrapper").style.display =
-			"inline-block";
+		document.querySelector(".option__wrapper").style.display = "inline-block";
 	} else {
 		document.querySelector(".option__wrapper").style.display = "none";
 	}
 });
-
 const optionList = [...document.querySelectorAll(".option")];
 optionList.forEach((e) => {
 	const input = document.querySelector(".select__input");
