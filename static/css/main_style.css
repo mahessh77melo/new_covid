@@ -107,77 +107,6 @@
         animation-fill-mode: forwards;
         animation: splitout 0.7s ease-in-out 0.4s; }
 
-.form__covid {
-  display: grid;
-  grid-template-rows: 1fr min-max(min-content, 60px);
-  grid-template-columns: min-content min-content min-content;
-  justify-content: center; }
-  .form__covid--select {
-    padding: 2rem 1rem;
-    grid-area: 1/1/1/2;
-    background-color: white;
-    border: none;
-    transition: all 0.2s;
-    border-top-right-radius: 25px;
-    border-bottom-left-radius: 25px;
-    font-family: inherit;
-    font-size: 1.6rem;
-    box-shadow: 0 0.6rem 1rem rgba(0, 20, 39, 0.8);
-    -webkit-appearance: none;
-    appearance: none;
-    cursor: pointer;
-    background-image: linear-gradient(135deg, rgba(68, 68, 68, 0.2), rgba(68, 68, 68, 0.5), rgba(68, 68, 68, 0.3));
-    max-width: 23rem; }
-    .form__covid--select img {
-      margin-left: 1.5rem;
-      opacity: 0.7;
-      height: 0.7rem;
-      width: 0.9rem; }
-    .form__covid--select:focus {
-      outline: none;
-      box-shadow: 0 1.8rem 2rem rgba(0, 20, 39, 0.7);
-      transform: translateY(-0.4rem); }
-    .form__covid--select::-webkit-input-placeholder {
-      color: #444; }
-    .form__covid--select::-ms-expand {
-      display: none; }
-  .form__covid--option {
-    font-weight: 300;
-    font-family: inherit;
-    font-size: 1.8rem; }
-  .form__covid--sub-btn {
-    cursor: pointer;
-    grid-area: 2/2/-1/-1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    height: 6rem;
-    backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    width: 6rem;
-    outline: none;
-    background-image: radial-gradient(rgba(0, 20, 39, 0.65), rgba(0, 0, 0, 0.85), rgba(0, 20, 39, 0.95));
-    border: none;
-    transition: all 0.2s;
-    box-shadow: 0 1.3rem 1.3rem rgba(0, 0, 0, 0.9); }
-    .form__covid--sub-btn:hover img {
-      transform: scale(1.1); }
-    .form__covid--sub-btn:focus {
-      outline: none; }
-    .form__covid--sub-btn:active {
-      transform: translateY(0.3rem);
-      box-shadow: 0 0.6rem 0.6rem rgba(0, 0, 0, 0.9); }
-    .form__covid--sub-btn img {
-      height: 3.5rem;
-      backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      -webkit-backface-visibility: hidden;
-      min-width: 2.8rem;
-      max-width: 2.8rem;
-      transition: all 0.15s; }
-
 .custom__select {
   display: grid;
   grid-template-rows: 1fr 25rem;
@@ -307,9 +236,9 @@
   background-image: linear-gradient(105deg, #001427 0%, #001427 50%, rgba(0, 20, 39, 0.975) 50%);
   grid-column-gap: 2rem; }
   .detail__container--chart {
-    grid-column: 0/1; }
-  .detail__container--stats {
     grid-column: 1/2; }
+  .detail__container--stats {
+    grid-column: 2/3; }
 
 html {
   font-size: 10px;
