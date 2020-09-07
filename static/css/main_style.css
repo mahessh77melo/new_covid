@@ -187,6 +187,7 @@
     display: inline-block;
     text-align: center;
     display: none;
+    height: 100%;
     max-height: 45rem;
     overflow-y: scroll;
     transition: all 0.3s;
@@ -226,14 +227,17 @@
 .detail__container {
   display: grid;
   min-height: 100vh;
+  align-items: center;
   grid-template-columns: 1fr 1fr;
-  background-image: linear-gradient(105deg, #001427 0%, #001427 50%, rgba(0, 20, 39, 0.975) 50%);
+  background-image: linear-gradient(105deg, rgba(90, 5, 1, 0.7) 0%, rgba(90, 5, 1, 0.5) 40%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/new_covid-1.jpg");
+  background-blend-mode: darken;
+  background-size: cover;
   grid-column-gap: 2rem; }
   .detail__container--chart {
     grid-column: 1/2;
     border: 2px solid #dedc5f;
     border-radius: 20px;
-    box-shadow: 0 2rem 2rem rgba(222, 220, 95, 0.77);
+    box-shadow: 0 1rem 4.5rem rgba(222, 220, 95, 0.5);
     height: 90%;
     width: 85%;
     transform: scale(0.875);
@@ -256,10 +260,105 @@
       padding: 0 2rem; }
   .detail__container--stats {
     grid-column: 2/3; }
-    .detail__container--stats .summa {
-      font-size: 3.5rem;
-      text-align: center;
-      color: #f4d58d; }
+
+.stat__heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+  text-shadow: 0 0.4rem 0.7rem rgba(255, 255, 255, 0.4);
+  margin-bottom: 4rem;
+  color: #bcbcbc; }
+
+.stat__boxes {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 2rem;
+  border: 1px solid #000;
+  padding: 2rem;
+  width: 60rem;
+  height: 66rem; }
+
+.stat__box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 1.5rem;
+  box-shadow: 0 1rem 1rem rgba(0, 20, 39, 0.25), 0 -1rem 1rem rgba(0, 20, 39, 0.25), 1rem 0 1rem rgba(0, 20, 39, 0.25), -1rem 0 1rem rgba(0, 20, 39, 0.25);
+  background-color: rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  transition: all 0.4s cubic-bezier(0.17, 0.67, 0.84, 1.81);
+  /* text-shadow: 0 0.3rem 0.4rem rgba($black-col, 0.4),
+		0 -0.3rem 0.4rem rgba($black-col, 0.4); */ }
+  .stat__box .stat__title {
+    font-size: 2.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-right: 1px solid #eee;
+    padding-right: 2.5rem; }
+  .stat__box .stat__data {
+    font-size: 2.2rem;
+    font-weight: 500;
+    padding-left: 2rem;
+    font-family: "Raleway", sans-serif; }
+  .stat__box--1 {
+    grid-area: 1 / 1 / 2 / 3;
+    border-top: 1px solid #dedc5f;
+    border-left: 1px solid #dedc5f;
+    color: #55c57a; }
+    .stat__box--1:hover {
+      box-shadow: 0 1rem 1rem rgba(85, 197, 122, 0.4), 0 -1rem 1rem rgba(85, 197, 122, 0.4), 1rem 0 1rem rgba(85, 197, 122, 0.4), -1rem 0 1rem rgba(85, 197, 122, 0.4); }
+  .stat__box--2 {
+    grid-area: 1 / 3 / 3 / 4;
+    flex-direction: column;
+    border-top: 1px solid #dedc5f;
+    border-right: 1px solid #dedc5f;
+    color: #ffb900; }
+    .stat__box--2 .stat__title {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5.5rem;
+      border-right: none;
+      padding-right: 0; }
+    .stat__box--2 .stat__data {
+      padding-left: 0;
+      padding-top: 2rem; }
+    .stat__box--2:hover {
+      box-shadow: 0 1rem 1rem rgba(255, 185, 0, 0.4), 0 -1rem 1rem rgba(255, 185, 0, 0.4), 1rem 0 1rem rgba(255, 185, 0, 0.4), -1rem 0 1rem rgba(255, 185, 0, 0.4); }
+  .stat__box--3 {
+    grid-area: 2 / 1 / 4 / 2;
+    flex-direction: column;
+    border-left: 1px solid #dedc5f;
+    color: #f64646; }
+    .stat__box--3 .stat__title {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5.5rem;
+      border-right: none;
+      padding-right: 0; }
+    .stat__box--3 .stat__data {
+      padding-left: 0;
+      padding-top: 2rem; }
+    .stat__box--3:hover {
+      box-shadow: 0 1rem 1rem rgba(246, 70, 70, 0.4), 0 -1rem 1rem rgba(246, 70, 70, 0.4), 1rem 0 1rem rgba(246, 70, 70, 0.4), -1rem 0 1rem rgba(246, 70, 70, 0.4); }
+  .stat__box--4 {
+    grid-area: 2 / 2 / 3 / 3;
+    color: #ff7730; }
+    .stat__box--4:hover {
+      box-shadow: 0 1rem 1rem rgba(255, 119, 48, 0.4), 0 -1rem 1rem rgba(255, 119, 48, 0.4), 1rem 0 1rem rgba(255, 119, 48, 0.4), -1rem 0 1rem rgba(255, 119, 48, 0.4); }
+  .stat__box--5 {
+    grid-area: 3 / 2 / 4 / 4;
+    border-right: 1px solid #dedc5f;
+    color: #f64646; }
+    .stat__box--5:hover {
+      box-shadow: 0 1rem 1rem rgba(246, 70, 70, 0.4), 0 -1rem 1rem rgba(246, 70, 70, 0.4), 1rem 0 1rem rgba(246, 70, 70, 0.4), -1rem 0 1rem rgba(246, 70, 70, 0.4); }
+  .stat__box--6 {
+    grid-area: 4 / 1 / 5 / 4;
+    border: 1px solid #dedc5f;
+    border-top: none;
+    color: #48bfe3; }
+    .stat__box--6:hover {
+      box-shadow: 0 1rem 1rem rgba(72, 191, 227, 0.4), 0 -1rem 1rem rgba(72, 191, 227, 0.4), 1rem 0 1rem rgba(72, 191, 227, 0.4), -1rem 0 1rem rgba(72, 191, 227, 0.4); }
+  .stat__box:hover {
+    transform: scale(1.05) translateY(-0.5rem); }
 
 html {
   font-size: 10px;

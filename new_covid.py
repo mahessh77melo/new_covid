@@ -40,7 +40,7 @@ def chartPage(ctry):
     death_rate = deaths*100 / confirmed
     rec_rate = recovered*100 / confirmed
     #  render the arguments to the html
-    return render_template('detail.html', name=name, confirmed=confirmed, active=active, deaths=deaths, recovered=recovered, time=time, rank=rank, death_rate=death_rate, rec_rate=rec_rate)
+    return render_template('detail.html', name=name, confirmed=confirmed, active=active, deaths=deaths, recovered=recovered, time=time, rank=rank, death_rate=round(death_rate,2), rec_rate=round(rec_rate,2))
 
 
 if __name__ == '__main__':
