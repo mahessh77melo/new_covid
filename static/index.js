@@ -4,13 +4,12 @@ const drop = document.querySelector(".dropdown"); // dropdown button
 drop.addEventListener("click", () => {
 	if (document.querySelector(".option__wrapper").style.display == "none") {
 		document.querySelector(".option__wrapper").style.display = "inline-block";
-		document.querySelector(".option__wrapper").style.height = "fit-content";
 	} else {
 		document.querySelector(".option__wrapper").style.display = "none";
 	}
 });
 
-//converting the node list to an JS array
+//converting the node list to a JS array
 const optionList = [...document.querySelectorAll(".option")];
 
 // manipulating the input with the option's value attribute.
@@ -46,7 +45,7 @@ selectInput.addEventListener("keyup", () => {
 	}
 });
 
-//tracking the backspace key
+//tracking the backspace key with the keydown event
 selectInput.addEventListener("keydown", (e) => {
 	if (e.keyCode === 8) {
 		let curValue = selectInput.value;
@@ -81,9 +80,17 @@ const renderSearch = (matches) => {
 	});
 
 	//recreating the event listener ---> !important step
-	document.querySelector(".option").addEventListener("click", (e) => {
-		selectInput.value = e.target.getAttribute("value");
-		// once an option is clicked.. wrapper disappears
-		document.querySelector(".option__wrapper").style.display = "none";
+	//converting the node list to a JS array
+	const optionList = [...document.querySelectorAll(".option")];
+
+	// manipulating the input with the option's value attribute.
+	optionList.forEach((e) => {
+		const input = document.querySelector(".select__input");
+		e.addEventListener("click", (e) => {
+			input.value = e.target.getAttribute("value");
+			//e.target.value is not possible..since this isn't an option tag..its a div tag
+			console.log(input.value);
+			document.querySelector(".option__wrapper").style.display = "none";
+		});
 	});
 };

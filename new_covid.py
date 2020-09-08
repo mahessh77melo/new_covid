@@ -29,7 +29,7 @@ def index():
 def chartPage(ctry):
     # Processing the covid data usin the country name
     data = cov.get_status_by_country_name(ctry)
-    # country # cinfriemdd # active # death # rec # timestamp
+    # country # confirmed # active # death # rec # timestamp
     name = data['country']
     confirmed = data['confirmed']
     active = data['active']
@@ -39,8 +39,8 @@ def chartPage(ctry):
     rank = ranked_ctry_list.index(name)+1
     death_rate = deaths*100 / confirmed
     rec_rate = recovered*100 / confirmed
-    #  render the arguments to the html
-    return render_template('detail.html', name=name, confirmed=confirmed, active=active, deaths=deaths, recovered=recovered, time=time, rank=rank, death_rate=round(death_rate,2), rec_rate=round(rec_rate,2))
+    #  render the arguments to the html template
+    return render_template('detail.html', name=name, confirmed=confirmed, active=active, deaths=deaths, recovered=recovered, time=time, rank=rank, death_rate=round(death_rate, 2), rec_rate=round(rec_rate, 2))
 
 
 if __name__ == '__main__':
