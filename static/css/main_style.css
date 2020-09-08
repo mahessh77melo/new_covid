@@ -116,8 +116,8 @@
     display: inline-block;
     grid-row: 1/1;
     padding: 1.5rem 1rem;
-    border-top-left-radius: 0.4rem;
-    border-bottom-left-radius: 0.4rem;
+    border-radius: 0.4rem;
+    border-bottom-right-radius: 30px;
     font-size: 1.7rem;
     font-weight: 500;
     color: #001427;
@@ -188,7 +188,7 @@
     text-align: center;
     display: none;
     height: min-content;
-    max-height: 45rem;
+    max-height: 30rem;
     overflow-y: scroll;
     transition: all 0.3s;
     scrollbar-width: none;
