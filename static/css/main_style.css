@@ -116,8 +116,8 @@
     display: inline-block;
     grid-row: 1/1;
     padding: 1.5rem 1rem;
-    border-radius: 0.4rem;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 30px;
     font-size: 1.7rem;
     font-weight: 500;
     color: #001427;
@@ -229,7 +229,7 @@
   min-height: 100vh;
   align-items: center;
   grid-template-columns: 1fr 1fr;
-  background-image: linear-gradient(105deg, rgba(90, 5, 1, 0.7) 0%, rgba(90, 5, 1, 0.65) 50%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.65) 100%), url("../img/new_covid-1.jpg");
+  background-image: linear-gradient(105deg, rgba(90, 5, 1, 0.7) 0%, rgba(90, 5, 1, 0.5) 50%, rgba(0, 0, 0, 0.7) 50%, rgba(0, 0, 0, 0.5) 100%), url("../img/new_covid-1.jpg"), linear-gradient(15deg, rgba(90, 5, 1, 0.3) 0%, rgba(90, 5, 1, 0.3) 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%), linear-gradient(45deg, rgba(90, 5, 1, 0.3) 0%, rgba(90, 5, 1, 0.3) 50%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.3) 100%);
   background-blend-mode: darken;
   background-size: cover;
   grid-column-gap: 2rem;
