@@ -18,8 +18,13 @@ id_list = [i['id']
 def index():
     if request.method == "POST":
         name = request.form['ctry_name']
+        # checking whether if its a valid name
         if name in name_list:
             return redirect(url_for("chartPage", ctry=name))
+        # avoiding the error
+        else:
+            return render_template('index_new.html', clist=ctry_list)
+
     else:
         return render_template('index_new.html', clist=ctry_list)
 

@@ -32,6 +32,7 @@ selectInput.addEventListener("keyup", () => {
 	let matches = optionList.filter((e) =>
 		e.getAttribute("value").toLowerCase().startsWith(curValue.toLowerCase())
 	);
+	//calling the render search method which inserts the options into the option wrapper
 	renderSearch(matches);
 
 	document.querySelector(".option__wrapper").style.display = "inline-block";
@@ -46,7 +47,7 @@ selectInput.addEventListener("keyup", () => {
 });
 
 //tracking the backspace key with the keydown event
-selectInput.addEventListener("keydown", (e) => {
+selectInput.addEventListener("keyup", (e) => {
 	if (e.keyCode === 8) {
 		let curValue = selectInput.value;
 		let matches = optionList.filter((e) =>
@@ -93,4 +94,24 @@ const renderSearch = (matches) => {
 			document.querySelector(".option__wrapper").style.display = "none";
 		});
 	});
+};
+
+// calling the checkInput if the enter button is pressed
+document.addEventListener("keyup", (e) => {
+	if (e.keyCode === 13) {
+		checkValid(selectInput.value);
+	}
+});
+subBtn = document.querySelector(".custom__select--sub-btn");
+
+//calling the checkInput if the submit button is pressed
+subBtn.addEventListener("click", () => {
+	checkValid(selectInput.value);
+});
+
+//checks if the input value is in the node list option wrapper
+const checkValid = (input) => {
+	if (!optionList.includes(input)) {
+		alert("Enter a valid input and STFU");
+	}
 };
