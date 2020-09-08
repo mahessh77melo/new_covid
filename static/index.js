@@ -111,7 +111,10 @@ subBtn.addEventListener("click", () => {
 
 //checks if the input value is in the node list option wrapper
 const checkValid = (input) => {
-	if (!optionList.includes(input)) {
+	const options = optionList.map((e) => e.getAttribute("value"));
+	console.log(options);
+	if (!options.includes(input)) {
+		console.log(options.includes(input));
 		alert("Enter a valid input and STFU");
 	}
 };
